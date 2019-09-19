@@ -1,9 +1,10 @@
 .container {
     .row {
         .heading {
-            background: #ff9800;
+            background: #ececec;
+            margin-top: 40px;
             h4 {
-                color: #fff;
+                color: gray;
                 padding: 10px 0px;
             }
         }
@@ -13,15 +14,15 @@
             h3,h6,input,select {
                 margin-bottom: 25px;
             }
-            input[type=text],select {
+            input[type=text],input[type=password],select {
                 width: 70%;
             }
             ul {
                 list-style: none;
                 display: flex;
                 padding: 0px;
-                li:last-child {
-                    margin-left: 50px;
+                li:not(:first-child) {
+                    margin-left: 25px;
                 }
                 input[type=button] {
                     background: #ff9800;

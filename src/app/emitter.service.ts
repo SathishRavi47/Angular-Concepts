@@ -9,14 +9,16 @@ declare let $:any;
   providedIn: 'root'
 })
 export class EmitterService {
-  private messageSource = new BehaviorSubject('');
+
   public message = new BehaviorSubject('');
+  public route = new BehaviorSubject('');
 
-  currentMessage = this.messageSource.asObservable();
   responseMessageSource = this.message.asObservable();
+  responseForRoute = this.route.asObservable();
 
-  changeMessage(message: any){
-    this.message.next(message);
+  getRouteLink(data) {
+    this.route.next(data);
+    console.log('data',data);
   }
   getMessage(data: any) {
     this.message.next(data);

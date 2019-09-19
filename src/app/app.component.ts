@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { EmitterService } from './emitter.service';
+import { Router } from '@angular/router' 
 declare const $:any;
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent {
   city = "Chennai";
   public message : any;
   public registeredNames: any;
-  constructor(public emitter:EmitterService) {}
+  constructor(public emitter:EmitterService, public router:Router) {}
 
   receiveName(value) {
     this.registeredNames = [];
@@ -24,8 +25,17 @@ export class AppComponent {
     this.emitter.responseMessageSource.subscribe(item=>{
       if(item){
         this.message=item;
-        $('#myModal').modal('show');
+        $(document).ready(function(){
+          $('#myModal').modal('show');
+        });
+        
       }
     });
+  }
+  focusElement(message) {
+    if(message == 'You have registered Successfully.') {
+      this.emitter.getRouteLink('login');
+      this.router.navigate(['./register']);
+    }
   }
 }

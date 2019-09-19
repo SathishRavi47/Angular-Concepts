@@ -1,0 +1,35 @@
+.container-fluid {
+    background: #ffac64;
+}
+.angular-icon {
+    width: 50px;
+    margin: 7px 0px;
+    cursor: pointer;
+}
+.col-lg-4 {
+    display: flex;
+    p {
+        cursor: pointer;
+    }
+}
+.angular-text {
+    margin: 8px 0px 0px -3px;
+    font-size: 31px;
+    color: #756363;
+}
+.heading-route {
+    margin: 0 10px 0 auto;
+    ul {
+        list-style: none;
+        display: flex;
+        margin-top: 18px;
+        li {
+            cursor: pointer;
+            outline: none;
+            margin-left: 25px;
+            color: #756363;
+            font-size: 16px;
+            font-variant: small-caps;
+        }
+    }
+}
